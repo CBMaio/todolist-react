@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useReducer } from "react";
+import { Container } from "react-bootstrap";
+import Header from "./Components/Header";
+import Create from "./Components/Create";
+import List from "./Components/List";
+import { todoReducer, initialState } from "./reducers/todo";
+import { ADD_ACTIVITY } from "./reducers/actions/todo";
+
 
 function App() {
+
+  const [state, dispatch] = useReducer(todoReducer, initialState)
+
+  const getActivities = (newActivity) => {
+    dispatch({ type: ADD_ACTIVITY, payload: { activity: newActivity } });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header />
+      <Create getActivities={getActivities} />
+      <List activities = {state.activities}/>
+    </Container>
   );
 }
 
