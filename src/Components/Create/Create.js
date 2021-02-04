@@ -1,7 +1,7 @@
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { nanoid } from "nanoid";
 
-const Create = ({ getActivities }) => {
+const Create = ({ getActivities, resetActivities }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const idRandom = nanoid(10);
@@ -19,6 +19,8 @@ const Create = ({ getActivities }) => {
     e.target[0].value = "";
   };
 
+
+
   return (
     <Row className="justify-content-center mt-3">
       <Col md={6}>
@@ -33,8 +35,8 @@ const Create = ({ getActivities }) => {
           <Button type="submit" className="w-100" variant="secondary">
             Agregar tarea
           </Button>
-          <Button className="mt-2 w-100" variant="danger" >
-            Eliminar todo
+          <Button className="mt-2 w-100" variant="danger" onClick={() => resetActivities()}>
+            Eliminar listado
           </Button>
         </Form>
       </Col>

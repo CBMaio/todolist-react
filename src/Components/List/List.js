@@ -1,20 +1,26 @@
 import { Row, Col } from "react-bootstrap";
 import Item from "./Item";
 
-const List = ({ activities }) => {
+const List = ({ activities, deleteActivities, changeAct, addFavorites, favorites }) => {
   return (
-    <>
-      <Row className="justify-content-center border mt-3">
-        <Col md={12}>
-          <h3>Tu listado de tareas:</h3>
-        </Col>
-      </Row>
-      <Row className="mt-2">
-        {activities.map((act) => (
-          <Item {...act} key={act.id} />
-        ))}
-      </Row>
-    </>
+    <Row className="mt-2 mb-4">
+      <h3>Tu listado de tareas:</h3>
+
+      {activities ? (
+        activities.map((act) => (
+          <Item
+            {...act}
+            key={act.id}
+            deleteActivities={deleteActivities}
+            changeAct={changeAct}
+            addFavorites={addFavorites}
+            favorites={favorites}
+          />
+        ))
+      ) : (
+        <h3>No hay info</h3>
+      )}
+    </Row>
   );
 };
 export default List;
