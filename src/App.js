@@ -1,10 +1,11 @@
-import { useReducer } from "react";
+/* import { useReducer } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import Header from "./Components/Header";
 import Create from "./Components/Create";
 import List from "./Components/List";
 import Favorites from "./Components/Favorites";
+import Main from "./Components/Main";
 import { todoReducer, initialState } from "./reducers/todo";
 import { favoritesReducer, initialStateFav } from "./reducers/favorites";
 import {
@@ -50,27 +51,66 @@ function App() {
   };
 
   return (
-    <Container>
-      <Header />
-      <Create getActivities={getActivities} resetActivities={resetActivities} />
-      <Row className="justify-content-center border mt-3">
-        <Col md={6}>
-          <List
-            activities={state.activities}
-            deleteActivities={deleteActivities}
-            changeAct={changeAct}
-            addFavorites={addFavorites}
-            favorites={stateFav.favorites}
+    <>
+      <Router>
+        <Container>
+          <Main />
+        </Container>
+        <Container>
+          <Header />
+          <Create
+            getActivities={getActivities}
+            resetActivities={resetActivities}
           />
-        </Col>
-        <Col md={6}>
-          <Favorites
-            favorites={stateFav.favorites}
-            deleteFavorites={deleteFavorites}
-          />
-        </Col>
-      </Row>
-    </Container>
+          <Row className="justify-content-center border mt-3">
+            <Col md={6}>
+              <List
+                activities={state.activities}
+                deleteActivities={deleteActivities}
+                changeAct={changeAct}
+                addFavorites={addFavorites}
+                favorites={stateFav.favorites}
+              />
+            </Col>
+            <Col md={6}>
+              <Favorites
+                favorites={stateFav.favorites}
+                deleteFavorites={deleteFavorites}
+              />
+            </Col>
+          </Row>
+        </Container>
+      </Router>
+    </>
+  );
+}
+
+export default App; */
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import TodolistComplete from "./Components/TodolistComplete";
+import Main from "./Components/Main";
+import List from "./Components/List";
+import Favorites from "./Components/Favorites";
+
+function App() {
+  return (
+    <>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Main} />
+          <Route path="/todolistComplete" component={TodolistComplete} />
+          <Container className="border">
+            <Row>
+              <Col>
+                <Route path="/list" component={List} />
+                <Route path="/favorites" component={Favorites} />
+              </Col>
+            </Row>
+          </Container>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
