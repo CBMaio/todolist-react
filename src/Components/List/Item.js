@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import {
   Check2,
   Trash,
@@ -33,7 +33,7 @@ const Item = ({
 
   const isFavorite = () => favorites.find((favorite) => favorite.id === id);
   return (
-    <Col md={10} className="mt-2 border">
+    <Col md={10} className="mt-2">
       <span className="mb-1 mt-1 d-flex align-items-center justify-content-between">
         <p
           onClick={changeStatusAct}

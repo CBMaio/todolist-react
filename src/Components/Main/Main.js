@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
-    <Row className="justify-content-center text-center p-5 border">
+    <Row className="justify-content-center text-center pt-5 pb-5">
       <Col md={12} className="">
         <h2>Página Principal</h2>
       </Col>

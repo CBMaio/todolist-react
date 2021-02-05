@@ -1,7 +1,11 @@
 import { ADD_ACTIVITY, DELETE_ACTIVITY, RESET_ACTIVITY } from "./actions/todo";
+import createPersistedReducer from "use-persisted-reducer";
+
+export const usePersistedReducer = createPersistedReducer('state');
 
 export const initialState = {
   activities: [],
+  /* JSON.parse(window.localStorage.getItem("activities")) || []*/
 };
 
 export function todoReducer(state = initialState, action) {

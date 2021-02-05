@@ -1,4 +1,7 @@
 import { ADD_ACTIVITY, DELETE_ACTIVITY } from "./actions/todo";
+import createPersistedReducer from "use-persisted-reducer";
+
+export const usePersistedReducerFav = createPersistedReducer('stateFav');
 
 export const initialStateFav = {
   favorites: [],
