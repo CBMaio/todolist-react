@@ -1,5 +1,4 @@
-import { useReducer, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import TodolistComplete from "./Components/TodolistComplete";
 import Main from "./Components/Main";
@@ -15,6 +14,7 @@ import {
 } from "./reducers/actions/todo";
 import { todoReducer, initialState } from "./reducers/todo";
 import { favoritesReducer, initialStateFav } from "./reducers/favorites";
+import './App.css';
 
 function App() {
   const [state, dispatch] = usePersistedReducer(todoReducer, initialState);
@@ -59,7 +59,7 @@ function App() {
     <>
       <Router>
         <HomeBtn />
-        <Switch>
+        <>
           <Route path="/" exact component={Main} />
           <Route path="/todolistComplete">
             <TodolistComplete
@@ -73,10 +73,10 @@ function App() {
               deleteFavorites={deleteFavorites}
             />
           </Route>
-          <Container>
-            <Row>
-              <Col>
-                <Route path="/list">
+          <Route path="/list">
+            <Container fluid  className="component-container">
+              <Row>
+                <Col className="justify-content-center d-flex">
                   <List
                     activities={state.activities}
                     deleteActivities={deleteActivities}
@@ -84,18 +84,24 @@ function App() {
                     addFavorites={addFavorites}
                     favorites={stateFav.favorites}
                   />
-                </Route>
+                </Col>
+              </Row>
+            </Container>
+          </Route>
 
-                <Route path="/favorites">
+          <Route path="/favorites">
+            <Container fluid  className="component-container">
+              <Row className="">
+                <Col className="justify-content-center d-flex">
                   <Favorites
                     favorites={stateFav.favorites}
                     deleteFavorites={deleteFavorites}
                   />
-                </Route>
-              </Col>
-            </Row>
-          </Container>
-        </Switch>
+                </Col>
+              </Row>
+            </Container>
+          </Route>
+        </>
       </Router>
     </>
   );

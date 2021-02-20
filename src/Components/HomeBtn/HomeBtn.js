@@ -1,11 +1,12 @@
 import { Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import './homeBtn.css';
 
 const HomeBtn = () => {
   return (
-    <Container className="mt-3 p-0">
+    <Container fluid className="p-4 home-button-container">
       <Link to="/" >
-        <Button variant="primary">Inicio</Button>
+        <button className="btn home-button" >Inicio</button>
       </Link>
     </Container>
   );

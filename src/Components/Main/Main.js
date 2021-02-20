@@ -1,36 +1,37 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "./main.css";
 
 const Main = () => {
   return (
-    <Row className="justify-content-center text-center pt-5 pb-5">
-      <Col md={12} className="">
+    <div className="justify-content-center text-center align-items-center main-vw">
+      <div className="principal-title-contaienr">
         <h2>Página Principal</h2>
-      </Col>
-      <Col>
-        <div className="mt-5">
+      </div>
+      <div>
+        <div className="mt-5 btn-container">
           <Link to="/todolistComplete">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" className="style-btn violetbtn">
               Agenda Completa
             </Button>
           </Link>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 btn-container">
           <Link to="/list">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" className="style-btn violetbtn">
               Listado de tareas
             </Button>
           </Link>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 btn-container">
           <Link to="/favorites">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="lg" className="style-btn violetbtn">
               Tareas Destacadas
             </Button>
           </Link>
         </div>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };
 export default Main;

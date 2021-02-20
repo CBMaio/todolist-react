@@ -1,0 +1,24 @@
+.favorites-container {
+  width: 35%;
+  box-shadow: 0 0 12px 0px rgba(0, 0, 0, 0.2);
+  background-color: #F5F5F6;
+  margin-right: 20px;
+  height: 40vh;
+  max-height: 40vh;
+  overflow-y: scroll;
+}
+
+.item {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  border-radius: 7px;
+}
+
+@media (max-width: 1024px) {
+  .favorites-container {
+    width: 90%;
+    margin: auto;
+  }
+}

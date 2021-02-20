@@ -1,0 +1,32 @@
+.style-btn {
+    border: none;
+    box-shadow: 0.22px 0.97px 4px #969696c4;
+    border-radius: 17px;
+    opacity: 1;
+    color: white;
+    width: 100%;
+  }
+  
+  .violetbtn {
+    background: #442c2e 0% 0% no-repeat padding-box;
+  }
+
+  .violetbtn:hover, .violetbtn:focus, .violetbtn:active {
+    background-color: #705557;
+  }
+  
+
+  .btn-container {
+      width: 250px;
+      margin: auto;
+  }
+
+  .main-vw {
+      background-color: #F5F5F6;       
+      height: 88vh;
+  }
+
+  .principal-title-contaienr {
+    color: #442c2e;
+    padding-top: 80px;
+  }

@@ -3,11 +3,11 @@ import Title from './Title';
 
 const Header = () => {
     return(
-        <Row className="justify-content-center mt-5">
-            <Col md={6}>
-                <Title title="ToDoList"/>
-            </Col>
-        </Row>
+        <div className="justify-content-center pt-5 title-container">
+            <div md={6}>
+                <Title title="Tu lista de tareas "/>
+            </div>
+        </div>
     )
 }
 export default Header;

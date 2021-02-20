@@ -1,5 +1,6 @@
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { nanoid } from "nanoid";
+import "./create.css";
 
 const Create = ({ getActivities, resetActivities }) => {
   const handleSubmit = (e) => {
@@ -19,28 +20,30 @@ const Create = ({ getActivities, resetActivities }) => {
     e.target[0].value = "";
   };
 
-
-
   return (
-    <Row className="justify-content-center mt-3">
-      <Col md={6}>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group>
-            <Form.Control
-              type="text"
-              placeholder="Ingrese una tarea"
-              name="work"
-            />
-          </Form.Group>
-          <Button type="submit" className="w-100" variant="secondary">
+    <div className="form-container">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group>
+          <Form.Control
+            type="text"
+            placeholder="Ingrese una tarea"
+            name="work"
+          />
+        </Form.Group>
+        <div className="form-btn-container">
+          <Button type="submit" className="w-100 btn-plus" variant="secondary">
             Agregar tarea
           </Button>
-          <Button className="mt-2 w-100" variant="danger" onClick={() => resetActivities()}>
+          <Button
+            className="w-100 btn-delete"
+            variant="secondary"
+            onClick={() => resetActivities()}
+          >
             Eliminar listado
           </Button>
-        </Form>
-      </Col>
-    </Row>
+        </div>
+      </Form>
+    </div>
   );
 };
 export default Create;

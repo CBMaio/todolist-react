@@ -1,0 +1,30 @@
+.todolist-container {
+  margin: 0;
+  padding: 0;
+  background-color: #E1E2E1;
+  min-height: 88vh;
+}
+
+.container-flex {
+    display: flex;
+  }
+
+/* HEADER */
+
+.title-container {
+  width: 90%;
+  margin: auto;
+  color: #442c2e;
+}
+
+
+
+@media (max-width: 1024px) {
+  .container-flex {
+    flex-direction: column;
+  }
+
+  .title-container h1{
+    font-size: 2rem;
+  }
+}

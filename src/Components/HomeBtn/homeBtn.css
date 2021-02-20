@@ -1,0 +1,17 @@
+.home-button-container {
+    background-color: #fedbd0;
+    border-top: 10px solid #caa99f;
+    height: 12vh;
+}
+
+.home-button {
+    outline: none!important;
+    color: #442C2E;
+    background-color: #feeae6;
+    border: 3px solid #caa99f;
+    border-radius: 10px;
+}
+
+.home-button:hover, .home-button:focus, .home-button:active {
+    border: 3px solid #442C2E;
+}

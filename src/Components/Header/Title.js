@@ -1,5 +1,7 @@
+import { PencilSquare } from 'react-bootstrap-icons';
+
 const Title = ({ title }) => {
-  return <h1 className="text-center"> {title} </h1>;
+  return <h1> {title} <PencilSquare className="ml-3"/></h1>;
 };
 
 export default Title;
